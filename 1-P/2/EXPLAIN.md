@@ -3,6 +3,45 @@ Dari 2 contoh baris program diatas, jawablah pertanyaan dibawah ini:
 1. Bagaimana output dari masing masing class Constants dan Constants2?
 2. Apa perbedaan penggunaan final double dengan public static final double?
 
+## Code
+```java
+// Constants.java
+public class Constants {
+
+    public static void main(String[] args) {
+        final double CM_PER_INCH = 2.54;
+        double paperWidth = 8.5;
+        double paperHeight = 11;
+        System.out.println(
+            "Paper size in centimeters: " +
+                paperWidth * CM_PER_INCH +
+                " by " +
+                paperHeight * CM_PER_INCH
+        );
+    }
+}
+```
+
+```java
+// Constants2.java
+public class Constants2 {
+
+    public static final double CM_PER_INCH = 2.54;
+
+    public static void main(String[] args) {
+        final double CM_PER_INCH = 2.54;
+        double paperWidth = 8.5;
+        double paperHeight = 11;
+        System.out.println(
+            "Paper size in centimeters: " +
+                paperWidth * CM_PER_INCH +
+                " by " +
+                paperHeight * CM_PER_INCH
+        );
+    }
+}
+```
+
 ## Output
 ```sh
 Paper size in centimeters: 21.59 by 27.94

@@ -3,6 +3,26 @@ Program berikut melakukan convert tipe data yang berukuran besar ke kecil (long 
 1. Jelaskan output nilai dari variable b.
 2. Jelaskan apa yang berubah dari variable d menjadi variable b setelah dilakukan cast ?
 
+## Code
+```java
+// FloatingPoint.java
+class ConvertDataType {
+
+    static short methodOne(long l) {
+        int i = (int) l;
+        return (short) i;
+    }
+
+    public static void main(String[] args) {
+        double d = 10.25;
+        float f = (float) d;
+        byte b = (byte) methodOne((long) f);
+        System.out.println(b);
+    }
+}
+
+```
+
 ## Output
 ```sh
 10

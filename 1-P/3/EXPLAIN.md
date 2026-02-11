@@ -3,6 +3,22 @@ Math Class berisi bermacam-macam fungsi matematika seperti pada contoh diatas pa
 1. Pada kasus berikut jelaskan nilai nx setelah digunakan Math.round(x);
 2. Kenapa dibutuhkan cast (int) dalam penggunaan Math.round(x) ?
 
+## Code
+```java
+// FloatingPoint.java
+class FloatingPoint {
+
+    public static void main(String[] args) {
+        double x = 92.98;
+
+        int nx = (int) Math.round(x);
+
+        System.out.println("x = " + x);
+        System.out.println("nx = " + nx);
+    }
+}
+```
+
 ## Output
 ```sh
 x = 92.98
