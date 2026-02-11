@@ -29,5 +29,5 @@ class ConvertDataType {
 ```
 
 ## Jawaban
-1. Output dari variable `b` adalah `10` karena hasil dari `methodOne((long) f)` adalah `10`, dan `byte` dapat menyimpan nilai antara `-128` hingga `127`, jadi nilai `10` tidak akan berubah.
+1. Output dari variable `b` adalah `10` karena hasil dari `methodOne((long) f)` adalah `10`, dan `byte` dapat menyimpan nilai antara `-128` hingga `127`, jadi nilai `10` tidak akan berubah setelah dilakukan cast.
 2. Setelah dilakukan cast, variable `d` menjadi variable `b` karena `byte` hanya dapat menyimpan nilai antara `-128` hingga `127`, jadi nilai `10` tidak akan berubah.
