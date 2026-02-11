@@ -88,4 +88,4 @@ class Main {
 ```
 
 ## Penjelasan Solusi
-Kode menggunakan BigInteger agar dapat menampung nilai yang lebih besar daripada tipe data primitif seperti byte, short, int, dan long. Ini memungkinkan kita untuk mengecek apakah suatu nilai dapat disimpan dalam tipe data tersebut tanpa kehilangan informasi dan tanpa try-catch.
+Kode menggunakan BigInteger agar dapat menampung nilai yang lebih besar daripada tipe data primitif seperti byte, short, int, dan long. Ini memungkinkan kita untuk mengecek apakah suatu nilai dapat disimpan dalam tipe data tersebut tanpa kehilangan informasi dan tanpa try-catch. Setelah ini, kode mengecek apakah nilai tersebut dapat disimpan dalam tipe data byte, short, int, atau long menggunakan properti BYTES dari setiap class wrapper primitive dan melakukan komparasi terhadap nilai bytes yang dimiliki oleh nilai yang ditampung pada BigInteger.
