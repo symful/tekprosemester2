@@ -1,0 +1,33 @@
+## Pertanyaan
+Program berikut melakukan convert tipe data yang berukuran besar ke kecil (long -> int -> short) dan (double -> float -> byte).
+1. Jelaskan output nilai dari variable b.
+2. Jelaskan apa yang berubah dari variable d menjadi variable b setelah dilakukan cast ?
+
+## Code
+```java
+// FloatingPoint.java
+class ConvertDataType {
+
+    static short methodOne(long l) {
+        int i = (int) l;
+        return (short) i;
+    }
+
+    public static void main(String[] args) {
+        double d = 10.25;
+        float f = (float) d;
+        byte b = (byte) methodOne((long) f);
+        System.out.println(b);
+    }
+}
+
+```
+
+## Output
+```sh
+10
+```
+
+## Jawaban
+1. Output dari variable `b` adalah `10` karena hasil dari `methodOne((long) f)` adalah `10`, dan `byte` dapat menyimpan nilai antara `-128` hingga `127`, jadi nilai `10` tidak akan berubah setelah dilakukan cast.
+2. Setelah dilakukan cast, variable `d` menjadi variable `b` karena `byte` hanya dapat menyimpan nilai antara `-128` hingga `127`, jadi nilai `10` tidak akan berubah.
