@@ -1,6 +1,6 @@
 PenjumlahanParalel.java
 
-Program ini mendemonstrasikan penjumlahan paralel dengan pola divide and conquer. Пользователь menentukan jumlah thread dan angka akhir, kemudian pekerjaan menjumlahkan angka dari 1 sampai angka akhir dibagi rata di antara thread-thread tersebut. Setiap thread menjumlahkan bagiannya masing-masing dan menyimpan hasil parsial, kemudian semua hasil parsial digabungkan untuk mendapatkan hasil akhir. Contoh dengan 4 thread dan angka akhir 1000, maka Thread 1 menjumlahkan 1-250, Thread 2 menjumlahkan 251-500, Thread 3 menjumlahkan 501-750, dan Thread 4 menjumlahkan 751-1000.
+Program ini mendemonstrasikan penjumlahan paralel dengan pola divide and conquer. User menentukan jumlah thread dan angka akhir, kemudian pekerjaan menjumlahkan angka dari 1 sampai angka akhir dibagi rata di antara thread-thread tersebut. Setiap thread menjumlahkan bagiannya masing-masing dan menyimpan hasil parsial, kemudian semua hasil parsial digabungkan untuk mendapatkan hasil akhir. Contoh dengan 4 thread dan angka akhir 1000, maka Thread 1 menjumlahkan 1-250, Thread 2 menjumlahkan 251-500, Thread 3 menjumlahkan 501-750, dan Thread 4 menjumlahkan 751-1000.
 
 Pembagian tugas dilakukan dengan menghitung chunk size yaitu angka akhir dibagi jumlah thread. Setiap thread mendapatkan rentang angka yang sama panjangnya kecuali thread terakhir yang mendapatkan sisa jika ada. Pendekatan ini memastikan beban kerja terdistribusi dengan adil di antara semua thread yang digunakan.
 
