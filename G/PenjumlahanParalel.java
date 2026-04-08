@@ -119,7 +119,7 @@ public class PenjumlahanParalel {
             int batasBawah = (i * chunkSize) + 1;
             int batasAtas = (i + 1) * chunkSize;
 
-            // Thread terakhir mendapatkan sisa jika ada
+            // Thread terakhir mendapatkan sisa jika ada sisa
             if (i == JUMLAH_THREAD - 1) {
                 batasAtas = ANGKA_AKHIR;
             }
