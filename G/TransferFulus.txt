@@ -1,0 +1,7 @@
+TransferFulus.java
+
+Masalah pada kode asli adalah deadlock. Deadlock terjadi ketika dua thread saling memegang satu kunci dan menunggu kunci yang dimiliki thread lainnya. Pada kode asli, Thread 1 mengunci acc1 kemudian menunggu acc2, sementara Thread 2 mengunci acc2 kemudian menunggu acc1. Keduanya saling memegang satu kunci dan menunggu kunci lainnya selamanya sehingga program tidak pernah selesai.
+
+Solusinya adalah menggunakan urutan kunci yang konsisten. Kedua thread harus mengunci acc1 terlebih dahulu baru kemudian acc2, tidak peduli arah transfer mana yang dilakukan. Dengan urutan kunci yang sama, tidak akan terjadi siklus tunggu karena ketika sebuah thread menahan acc1, thread lainnya juga harus menunggu acc1 (bukan acc2), sehingga tidak ada siklus circular wait yang menyebabkan deadlock.
+
+Blok synchronized digunakan untuk memastikan hanya satu thread yang dapat mengakses objek yang dikunci pada satu waktu. Try-catch diperlukan untuk Thread.sleep karena metode tersebut melempar InterruptedException yang merupakan checked exception. Keyword synchronized memberikan kemampuan untuk mengunci objek sehingga critical section terlindungi dari akses konkuren oleh thread lain.
