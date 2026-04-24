@@ -5,11 +5,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.p2p.domain.*;
 import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LoanServiceTest {
+    private static final Logger logger = LogManager.getLogger(LoanServiceTest.class);
 
     @Test
     void shouldRejectLoanWhenBorrowerNotVerified() {
+        logger.info("TC-01: Testing unverified borrower rejection");
         Borrower borrower = new Borrower(false, 700);
         LoanService loanService = new LoanService();
         BigDecimal amount = BigDecimal.valueOf(1000);
@@ -24,6 +28,7 @@ public class LoanServiceTest {
 
     @Test
     void shouldRejectLoanWhenAmountIsZeroOrNegative() {
+        logger.info("TC-02: Testing amount validation (zero/negative)");
         Borrower borrower = new Borrower(true, 700);
         LoanService loanService = new LoanService();
 
@@ -38,6 +43,7 @@ public class LoanServiceTest {
 
     @Test
     void shouldApproveLoanWhenCreditScoreHigh() {
+        logger.info("TC-03: Testing high credit score approval");
         Borrower borrower = new Borrower(true, 700);
         LoanService loanService = new LoanService();
         BigDecimal amount = BigDecimal.valueOf(1000);
@@ -48,6 +54,7 @@ public class LoanServiceTest {
 
     @Test
     void shouldRejectLoanWhenCreditScoreLow() {
+        logger.info("TC-04: Testing low credit score rejection");
         Borrower borrower = new Borrower(true, 500);
         LoanService loanService = new LoanService();
         BigDecimal amount = BigDecimal.valueOf(1000);
