@@ -1,7 +1,7 @@
 package com.p2p.domain;
 
 public class Loan {
-    public enum Status { PENDING, APPROVED, REJECTED }
+    public enum Status { PENDING, APPROVED, REJECTED, FUNDED }
 
     private Status status = Status.PENDING;
 
@@ -10,4 +10,5 @@ public class Loan {
 
     public void approve() { this.status = Status.APPROVED; }
     public void reject() { this.status = Status.REJECTED; }
+    public void fund() { this.status = Status.FUNDED; }
 }

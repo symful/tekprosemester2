@@ -9,6 +9,20 @@ import org.junit.jupiter.api.Test;
 public class LoanServiceTest {
 
     @Test
+    void shouldRejectLoanWhenBorrowerNotVerified() {
+        Borrower borrower = new Borrower(false, 700);
+        LoanService loanService = new LoanService();
+        BigDecimal amount = BigDecimal.valueOf(1000);
+
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> loanService.createLoan(borrower, amount)
+        );
+
+        assertEquals("Borrower not verified", exception.getMessage());
+    }
+
+    @Test
     void shouldRejectLoanWhenAmountIsZeroOrNegative() {
         Borrower borrower = new Borrower(true, 700);
         LoanService loanService = new LoanService();

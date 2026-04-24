@@ -7,9 +7,7 @@ public class LoanService {
     private static final int CREDIT_SCORE_THRESHOLD = 600;
 
     public Loan createLoan(Borrower borrower, BigDecimal amount) {
-        if (!borrower.canApplyLoan()) {
-            throw new IllegalArgumentException("Borrower not verified");
-        }
+        validateBorrower(borrower);
 
         validateLoanAmount(amount);
 
@@ -27,6 +25,12 @@ public class LoanService {
     private void validateLoanAmount(BigDecimal amount) {
         if (amount == null || amount.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Invalid amount");
+        }
+    }
+
+    private void validateBorrower(Borrower borrower) {
+        if (!borrower.canApplyLoan()) {
+            throw new IllegalArgumentException("Borrower not verified");
         }
     }
 }
